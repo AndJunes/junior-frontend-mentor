@@ -1,0 +1,165 @@
+/* =======================
+   VARIABLES (Colores, fuentes y espaciados)
+   ======================= */
+:root {
+  /* Colores principales */
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(210, 46%, 95%);
+  --medium-gray: hsl(217, 19%, 35%);
+  --dark-gray: hsl(219, 29%, 14%);
+  --violet: hsl(263, 55%, 52%);
+
+  /* Tipografía */
+  --font-primary: "Barlow Semi Condensed", sans-serif;
+  --font-normal: 500;
+  --font-bold: 600;
+  --font-sm: 0.8125rem; /* pequeño texto */
+  --font-md: 1rem;      /* texto normal */
+  --font-lg: 1.5rem;    /* títulos grandes */
+
+  /* Espaciados */
+  --gap-sm: 1rem;
+  --gap-md: 1.5rem;
+  --gap-lg: 2rem;
+}
+
+/* =======================
+   RESETS (Quitar margenes y paddings por defecto)
+   ======================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* hace que padding y border no cambien el ancho total */
+  margin: 0; /* quitar margenes */
+  padding: 0; /* quitar padding */
+}
+
+/* =======================
+   ESTILOS BASE
+   ======================= */
+html {
+  font-family: var(--font-primary); /* fuente principal */
+  font-size: var(--font-sm);        /* tamaño base */
+}
+
+body {
+  min-height: 100vh;                /* ocupa toda la pantalla */
+  background-color: var(--light-gray); /* fondo claro */
+  font-weight: var(--font-normal);
+  line-height: 1.4;                 /* espacio entre líneas */
+}
+
+/* =======================
+   TIPOGRAFÍA
+   ======================= */
+h1, h2, h3 {
+  line-height: 1.1;
+  font-weight: var(--font-bold);
+  font-size: var(--font-lg);
+}
+
+p {
+  margin-block: 0; /* quitar margenes arriba y abajo de los párrafos */
+}
+
+/* =======================
+   CLASES UTILES
+   ======================= */
+.flow > * + * {
+  margin-top: var(--gap-md); /* agrega espacio entre elementos hijos */
+}
+
+.text-white { color: var(--white); }
+.text-dark { color: var(--medium-gray); }
+
+.bg-white { background-color: var(--white); }
+.bg-violet { background-color: var(--violet); }
+.bg-grayish-blue { background-color: var(--medium-gray); }
+.bg-blackish-blue { background-color: var(--dark-gray); }
+
+/* =======================
+   WRAPPER (Contenedor principal)
+   ======================= */
+.wrapper {
+  margin: var(--gap-lg) 1.4rem; /* espacio arriba/abajo y a los lados */
+}
+
+/* =======================
+   GRID (Diseño de tarjetas)
+   ======================= */
+.testimonials-grid {
+  display: grid;          /* usa grid para ordenar */
+  gap: var(--gap-md);     /* espacio entre tarjetas */
+  grid-template-columns: 1fr; /* una columna en mobile */
+  justify-items: center;
+}
+
+/* Cambios para pantallas más grandes */
+@media (min-width: 35rem) {
+    main {
+    min-height: 100vh;         /* altura mínima igual a la pantalla */
+    display: flex;             /* usar flex para centrar */
+    flex-direction: column;    /* columnas verticales */
+    justify-content: center;   /* centrar verticalmente */
+    align-items: center;       /* centrar horizontalmente */
+    }
+  .wrapper {
+    margin: 10rem 5vw; /* más espacio en desktop */
+  }
+  .testimonials-grid {
+    grid-template-columns: repeat(4, minmax(12rem, 25rem));
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+    justify-items: center; /* sigue centrando cada article */
+    justify-content: center;
+  }
+  /* Asignar áreas a cada tarjeta */
+  .testimonials-grid > :nth-child(1) { grid-area: one; }
+  .testimonials-grid > :nth-child(2) { grid-area: two; }
+  .testimonials-grid > :nth-child(3) { grid-area: three; }
+  .testimonials-grid > :nth-child(4) { grid-area: four; }
+  .testimonials-grid > :nth-child(5) { grid-area: five; }
+}
+
+/* =======================
+   TARJETAS (Testimonial cards)
+   ======================= */
+.testimonial {
+  border-radius: 0.5rem; /* bordes redondeados */
+  padding: var(--gap-lg); /* espacio interno */
+}
+
+/* Colores según tipo de testimonial */
+.testimonial--violet {
+  background-color: var(--violet);
+  color: var(--white);
+  background-image: url('./images/bg-pattern-quotation.svg'); /* imagen de comillas */
+  background-repeat: no-repeat;
+  background-position: top right 2rem;
+}
+
+.testimonial--grayish-blue { background-color: var(--medium-gray); color: var(--white); }
+.testimonial--blackish-blue { background-color: var(--dark-gray); color: var(--white); }
+.testimonial--white { background-color: var(--white); color: var(--medium-gray); }
+
+/* =======================
+   PERFIL DEL USUARIO
+   ======================= */
+.profile {
+  display: flex;            /* usar flex para alinear imagen y texto */
+  align-items: center;      /* centrar verticalmente */
+  gap: var(--gap-md);       /* espacio entre imagen y texto */
+}
+
+.profile__image {
+  border-radius: 50%;          /* imagen redonda */
+  border: 2px solid var(--dark-gray);
+  width: 1.875rem;             /* tamaño imagen */
+  height: 1.875rem;
+}
+
+.profile__name { font-size: var(--font-md); font-weight: var(--font-bold); }
+.profile__name--dark { color: var(--medium-gray); }
+.profile__role { font-size: var(--font-sm); color: var(--light-gray); }
+
