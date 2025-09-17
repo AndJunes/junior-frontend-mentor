@@ -71,11 +71,12 @@
     background-image:
       var(--bg-squiggly-top),
       var(--bg-squiggly-bottom-mobile-tablet),
+      var(--bg-lines), 
       var(--bg-logo-full),
       var(--bg-main-mobile-tablet);
-    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
-    background-size: 120px auto, 200px auto, 160px auto, cover; /* logo más chico pero visible */
-    background-position: top 12px right 12px, left bottom, top 80px center, center;
+    background-repeat: no-repeat, no-repeat, repeat-x, no-repeat, no-repeat;
+    background-size: 120px auto, 200px auto, auto, 160px auto, cover;
+    background-position: top 12px right 12px, left bottom, center, top 80px center, center;
   }
 
   .app-container h2{
