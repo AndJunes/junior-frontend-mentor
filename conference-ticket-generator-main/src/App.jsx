@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
-import Form from "./Components/Form/Form";
-import Ticket from "./Components/Ticket/Ticket";
+import Form from "./components/Form/Form";
+import Ticket from "./components/Ticket/Ticket";
 
 function App() {
   const [formData, setFormData] = useState(null);
