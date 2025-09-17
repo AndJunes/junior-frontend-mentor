@@ -1,0 +1,85 @@
+:root {
+  --bg-main: url("./assets/images/background-desktop.png");
+  --bg-lines: url("./assets/images/pattern-lines.svg");
+  --bg-circle: url("./assets/images/pattern-circle.svg");
+  --bg-squiggly-top: url("./assets/images/pattern-squiggly-line-top.svg");
+  --bg-squiggly-bottom: url("./assets/images/pattern-squiggly-line-bottom-desktop.svg");
+  --bg-logo-full: url("./assets/images/logo-full.svg");
+  --bg-main-mobile-tablet: url("./assets/images/background-mobile.png");
+  --bg-squiggly-bottom-mobile-tablet: url("./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg")
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-image: 
+    var(--bg-squiggly-top),
+    var(--bg-squiggly-bottom),
+    var(--bg-circle),
+    var(--bg-circle),
+    var(--bg-lines),
+    var(--bg-logo-full),
+    var(--bg-main);
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat-x, no-repeat, no-repeat;
+  background-size: auto, auto, 150px auto, auto, auto, auto, cover;
+  background-position: right top 40px, left bottom, calc(50% + 400px) calc(50% + 200px), top -80px left 80px, top center, top 50px center, center;
+}
+
+.app-span{
+    background: linear-gradient(to right,hsl(7, 86%, 67%),hsl(0, 0%, 100%)); 
+    background-clip: text;  
+    -webkit-background-clip: text; 
+    color: transparent; 
+    -webkit-text-fill-color: transparent; 
+}
+
+.app-h3{
+    font-family: var(--font-regular);
+    color: var(--neutral-light);
+}
+
+.app-span-h3{
+    color: var(--orange-primary);
+}
+
+.heading_container{
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .app-container {
+    min-height: 100vh;
+    background-image:
+      var(--bg-circle),
+      var(--bg-squiggly-top),
+      var(--bg-lines),
+      var(--bg-circle),
+      var(--bg-squiggly-bottom-mobile-tablet),
+      var(--bg-logo-full),
+      var(--bg-main-mobile-tablet);
+    background-repeat: no-repeat, no-repeat, repeat-x, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 150px, 100px, auto, 150px, 250px, 180px auto, cover; /* logo más grande */
+    background-position: -50px -50px, calc(100% - 20px) 20px, center, calc(100% + 70px) 50%, left bottom, top 20px center, center;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0;
+    min-height: 100dvh;
+    background-image:
+      var(--bg-squiggly-top),
+      var(--bg-squiggly-bottom-mobile-tablet),
+      var(--bg-logo-full),
+      var(--bg-main-mobile-tablet);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 120px auto, 200px auto, 160px auto, cover; /* logo más chico pero visible */
+    background-position: top 12px right 12px, left bottom, top 80px center, center;
+  }
+
+  .app-container h2{
+    font-size: 2rem;
+  }
+
+}

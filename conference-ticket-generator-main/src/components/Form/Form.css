@@ -1,0 +1,184 @@
+/* Estilos base (mobile first) se mantienen */
+.heading_container{
+    padding-top: 8rem;
+}
+
+h3,
+.upload-text {
+  color: var(--neutral-medium);
+  font-family: var(--font-regular);
+  text-align: center;
+  padding-top: 20px;
+}
+
+h2 {
+  color: var(--neutral-white);
+  font-family: var(--font-bold);
+  font-size: 2.4rem;
+  text-align: center;
+
+}
+
+form {
+  padding: 0.5rem;
+  margin-top: 2rem;
+  font-family: var(--font-regular);
+}
+
+label {
+  text-align: left;
+  font-size: large;
+  color: var(--neutral-white);
+}
+
+.upload-wrapper {
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.upload-card {
+  text-align: center;
+  border: 2px dashed var(--neutral-medium);
+  border-radius: 12px;
+  padding: 20px 20px;
+  cursor: pointer;
+  margin: 10px 0;
+  background-color: var(--neutral-transparent);
+  backdrop-filter: blur(2px);
+}
+
+.upload-note {
+  font-size: smaller;
+  color: var(--neutral-medium);
+}
+
+.info {
+  text-align: left;
+}
+
+.upload-img {
+  height: 40px;
+  width: 40px;
+  margin: 0 auto 0.5rem;
+  border: 0.5px solid var(--neutral-dark);
+  border-radius: 12px;
+  background-color: var(--neutral-transparent);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#photo-preview {
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+  border: 0.5px solid var(--neutral-medium);
+}
+
+#drop-area.dragover {
+  background-color: var(--neutral-dark);
+}
+
+.action-btn {
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--neutral-transparent);
+  color: var(--neutral-white);
+  font-family: "Inconsolata", monospace;
+}
+
+.action-btn:hover {
+  color: var(--neutral-medium);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.img-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 320px;
+  margin: 1rem auto;
+  gap: 1rem;
+}
+
+.input-container input {
+  min-height: 50px;
+  background-color: var(--neutral-transparent);
+  border: 1px solid var(--neutral-medium);
+  border-radius: 12px;
+  padding: 10px;
+  color: #fff;
+  font-family: "Inconsolata", monospace;
+  font-size: large;
+}
+
+.input-container input::placeholder {
+  color: var(--neutral-light);
+  font-family: "Inconsolata", monospace;
+}
+
+.submit-btn {
+  min-height: 50px;
+  font-size: larger;
+  font-family: "Inconsolata", monospace;
+  background-color: var(--orange-dark);
+  border: none;
+  font-weight: bolder;
+  color: var(--neutral-black);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Media queries para desktop (1440px) */
+@media screen and (min-width: 1440px) {
+  h2 {
+    font-size: 3.2rem;
+  }
+  
+  .upload-wrapper {
+    max-width: 480px;
+  }
+  
+  .upload-card {
+    padding: 30px;
+  }
+  
+  .upload-img, #photo-preview {
+    height: 60px;
+    width: 60px;
+  }
+  
+  .input-container {
+    max-width: 480px;
+    gap: 1.5rem;
+  }
+  
+  .input-container input {
+    min-height: 60px;
+    font-size: 1.1rem;
+    padding: 15px;
+  }
+  
+  .submit-btn {
+    min-height: 60px;
+    font-size: 1.2rem;
+  }
+  
+  form {
+    padding: 1.5rem;
+  }
+  
+  .upload-note {
+    font-size: 0.9rem;
+  }
+}
